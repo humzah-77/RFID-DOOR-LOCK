@@ -10,3 +10,51 @@ to remove a card from the list, you need to scan the master card twice, then sca
 if id of the scanned card is on the list of authorized ids, it will then be removed.
 for the inside of the room, ther wil be a touch sensor position next to the door which will allow for locking and unlocking 
 with a simple touch
+
+Pin layout used:
+-------------------------------------
+MFRC522      Arduino       
+Reader/PCD   Uno/101       
+Pin          Pin          
+-------------------------------------
+RST          9             
+SDA          10            
+MOSI         11   
+MISO         12    
+SCK          13    
+-------------------------------------
+-------------------------------------
+-------------------------------------
+Touch       Arduino       
+Sensor      Uno/101       
+Pin         Pin          
+-------------------------------------
+SG          2           
+-------------------------------------
+-------------------------------------
+-------------------------------------
+ LED      Arduino       
+          Uno/101       
+          Pin          
+-------------------------------------
+1        6             
+2        5
+-------------------------------------
+-------------------------------------
+-------------------------------------
+             Arduino       
+ BUZZER      Uno/101       
+ Pin         Pin          
+-------------------------------------
++           7           
+-------------------------------------
+-------------------------------------
+-------------------------------------
+SERVO       Arduino       
+MOTOR      Uno/101       
+Pin         Pin          
+-------------------------------------
+SG          8           
+-------------------------------------
+-------------------------------------
+-------------------------------------
