@@ -23,5 +23,6 @@ This variable is used to show upto which position is filled in the EEPROM. Once 
 
 # ACTIVITY-DIAGRAM
 
+using StarUML
 
 <img width="441" alt="rfidmap" src="https://user-images.githubusercontent.com/58381410/136876874-9b2fba10-d758-4c68-892c-76ac9421513f.png">
