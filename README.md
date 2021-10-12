@@ -1,11 +1,11 @@
 # RFID-DOOR-LOCK
-An arduino based rfid door lock
+An Arduino based rfid door lock
 
-This code is based on the READNIUD example sketch from the MFRC522 library: https://github.com/miguelbalboa/rfid and built using an arduino uno.
+This code is based on the READNIUD example sketch from the MFRC522 library: https://github.com/miguelbalboa/rfid and built using an Arduino Uno.
 
-This program makes use of the built in EEPROM which allows storage of data indefinetly. The benifit of using the EEPROM is that is keeps the data in the event of power loss or accidently hitting the reset button on the arduino board.
+This program makes use of the built in EEPROM which allows storage of data indefinetly. The benifit of using the EEPROM is that is keeps the data in the event of power loss or accidently hitting the reset button on the Arduino board.
 
-how to run:
+How To Run:
 
 1. Upload setupeeprom.ino to the Arduino board
 2. Once uploaded scan a RFID card
@@ -19,10 +19,10 @@ Essentially how the lock system will work is, on the outside of the room there w
 
 EEPROM Position Curser Variable:
 
-This variable is used to show upto which position is filled in the EEPROM. Once the setupeeprom.ino is run the curser variable is set to 5, 1 for the curser variable and 4 for the mastercard ID numbers. When a new ID is added it will add the four ID numbers into the next four positions after the curser position. When removing a card first the list of all the IDs are copied onto a linkedlist, then a for loop is used. The loop checks every 4th slot of the list and compares it with the first ID number of the card scanned. Once the id is found it is removed from the linked list. Then the eeprom list is cleared and the updated link list is transferred back into the EEPROM and the curser variable gets subtracted by 4.
+This variable is used to show upto which position is filled in the EEPROM. Once the setupeeprom.ino is run the curser variable is set to 5, 1 for the curser variable and 4 for the mastercard ID numbers. When a new ID is added it will add the four ID numbers into the next four positions after the curser position. When removing a card first the list of all the IDs are copied onto a linkedlist, then a for loop is used. The loop checks every 4th slot of the list and compares it with the first ID number of the card scanned. Once the ID is found it is removed from the linked list. Then the EEPROM list is cleared and the updated linkedlist is transferred back into the EEPROM and the curser variable gets subtracted by 4.
 
 # ACTIVITY-DIAGRAM
 
-using StarUML
+Using StarUML
 
 <img width="441" alt="rfidmap" src="https://user-images.githubusercontent.com/58381410/136876874-9b2fba10-d758-4c68-892c-76ac9421513f.png">
