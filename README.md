@@ -17,4 +17,6 @@ Essentially how the lock system will work is, on the outside of the room there w
 
 
 attached below is an activity diagram of the lock system
+
+
 <img width="441" alt="rfidmap" src="https://user-images.githubusercontent.com/58381410/136876874-9b2fba10-d758-4c68-892c-76ac9421513f.png">
