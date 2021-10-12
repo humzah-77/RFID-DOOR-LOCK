@@ -8,7 +8,7 @@ This program makes use of the built in EEPROM which allows storage of data indef
 how to run:
 1. Upload setupeeprom.ino to the Arduino board
 2. Once uploaded scan a RFID card
-3. Once scanned the id will be saved into eeprom along with EEPROM poisition curser variable
+3. Once scanned the ID will be saved into EEPROM as the mastercard along with EEPROM poisition curser variable
 4. Upload rfiddoorlock.ino to Arduino board
 5. Now the system is ready
 
