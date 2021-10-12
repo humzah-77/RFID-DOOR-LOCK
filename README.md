@@ -21,7 +21,7 @@ EEPROM Position Curser Variable:
 
 This variable is used to show upto which position is filled in the EEPROM. Once the setupeeprom.ino is run the curser variable is set to 5, 1 for the curser variable and 4 for the mastercard ID numbers. When a new ID is added it will add the four ID numbers into the next four positions after the curser position. When removing a card first the list of all the IDs are copied onto a linkedlist, then a for loop is used. The loop checks every 4th slot of the list and compares it with the first ID number of the card scanned. Once the id is found it is removed from the linked list. Then the eeprom list is cleared and the updated link list is transferred back into the EEPROM and the curser variable gets subtracted by 4.
 
-attached below is an activity diagram of the lock system
+# ACTIVITY-DIAGRAM
 
 
 <img width="441" alt="rfidmap" src="https://user-images.githubusercontent.com/58381410/136876874-9b2fba10-d758-4c68-892c-76ac9421513f.png">
