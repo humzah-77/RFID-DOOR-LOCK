@@ -144,11 +144,17 @@ void loop() {
       {//if it is 
         if (sub == false)//if the previous id was the mastercard id and you are not in removing mode then you are in adding mode
         {
+          Serial.println(F("adding"));
           addtolist(rfid.uid.uidByte[0], rfid.uid.uidByte[1], rfid.uid.uidByte[2],rfid.uid.uidByte[3]);//call adding function to add the card id into the list 
         }
         if(sub == true)//you are in removing mode
         {
+          Serial.println(F("removing"));
           removefromlist(rfid.uid.uidByte[0], rfid.uid.uidByte[1], rfid.uid.uidByte[2],rfid.uid.uidByte[3]);//call removing function to remove card id from the list
+          nuidPICC[0] = 0;
+          nuidPICC[1] = 0;
+          nuidPICC[2] = 0;
+          nuidPICC[3] = 0;
         }
         
       }
@@ -159,7 +165,24 @@ void loop() {
         rfid.uid.uidByte[2] == master3 && 
         rfid.uid.uidByte[3] == master4 )
         {
-          sub = true; //then put program into removing mode
+          if(sub == false)
+          {
+            sub = true; //then put program into removing mode
+            tone(buzzer, 400); //ring the buzzer 
+            delay(500);//wait 500 miliseconds
+            noTone(buzzer);//end buzzer
+          }
+          else{
+            Serial.println(F("cancelled"));
+            nuidPICC[0] = 0;
+            nuidPICC[1] = 0;
+            nuidPICC[2] = 0;
+            nuidPICC[3] = 0;
+            sub = false;
+            tone(buzzer, 400); //ring the buzzer 
+            delay(500);//wait 500 miliseconds
+            noTone(buzzer);//end buzzer
+          }
         }
       }
     }
@@ -270,6 +293,7 @@ void addtolist(byte id1, byte id2, byte id3, byte id4)//add a uid to the list
 
 void removefromlist(byte id1, byte id2, byte id3, byte id4)//removes a uid from the list 
 {
+  sub = false;
   LinkedList<byte> uid1;
   LinkedList<byte> uid2;//linked list for all 4 uid numbers
   LinkedList<byte> uid3;
@@ -289,6 +313,7 @@ void removefromlist(byte id1, byte id2, byte id3, byte id4)//removes a uid from 
              uid4.RemoveAt(i);
              int cerser = EEPROM.read(0);
              cerser -= 4;
+             EEPROM.write(0,cerser);
              for(int i = 5; i < EEPROM.read(0); i+=4){
               EEPROM.write(i,0);
               EEPROM.write(i + 1,0);
