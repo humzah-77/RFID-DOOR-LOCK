@@ -5,6 +5,9 @@ This code is based on the READNIUD example sketch from the MFRC522 library: http
 
 This program makes use of the built in EEPROM which allows storage of data indefinetly. The benifit of using the EEPROM is that is keeps the data in the event of power loss or accidently hitting the reset button on the Arduino board.
 
+<img width="1324" alt="Screen Shot 2021-11-24 at 8 17 49 PM" src="https://user-images.githubusercontent.com/58381410/143334827-b9958c0e-c1cc-41a4-a383-f498098eecce.png">
+
+
 How To Run:
 
 1. Upload setupeeprom.ino to the Arduino board
